@@ -1,4 +1,4 @@
-export class RutaModel{
+export class VueloModel{
     id?: String;
     fecha_inicio?: Date;
     hora_inicio?: String;
