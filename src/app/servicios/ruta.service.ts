@@ -20,7 +20,11 @@ export class RutaService {
       return this.http.post<RutaModel>(`${this.url}/rutas`, {
         origen: ruta.origen,
         destino: ruta.destino,
-        tiempo_estimado: ruta.tiempo_estimado
+        tiempo_estimado: ruta.tiempo_estimado}, {
+
+          headers: new HttpHeaders({
+            "Authorization": `Bearer ${this.token}`
+          })
    
       });
     }

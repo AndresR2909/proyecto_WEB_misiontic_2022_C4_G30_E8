@@ -6,6 +6,7 @@ import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { GetComponent } from './get/get.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,9 @@ import { GetComponent } from './get/get.component';
   ],
   imports: [
     CommonModule,
-    AeropuertosRoutingModule
+    AeropuertosRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AeropuertosModule { }

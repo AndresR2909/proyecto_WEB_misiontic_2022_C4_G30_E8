@@ -6,5 +6,6 @@ export class AeropuertoModel{
     coordenada_x?: string;
     coordenada_y?: string;
     siglas?: string;
+    tipo?: string;
     
   }

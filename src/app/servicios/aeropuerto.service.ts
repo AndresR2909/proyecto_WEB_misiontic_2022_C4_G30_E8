@@ -22,9 +22,14 @@ export class AeropuertoService {
         nombre: aeropuerto.nombre,
         ciudad: aeropuerto.ciudad,
         pais: aeropuerto.pais,
-        coordenada_x: aeropuerto.coordenada_x,
-        coordenada_y: aeropuerto.coordenada_y,
-        siglas: aeropuerto.siglas
+        coordenada_x: Number(aeropuerto.coordenada_x),
+        coordenada_y: Number(aeropuerto.coordenada_y),
+        siglas: aeropuerto.siglas,
+        tipo: 'Internacional'}, {
+
+          headers: new HttpHeaders({
+            "Authorization": `Bearer ${this.token}`
+          })
         
       });
     }
@@ -42,9 +47,10 @@ export class AeropuertoService {
         nombre: aeropuerto.nombre,
         ciudad: aeropuerto.ciudad,
         pais: aeropuerto.pais,
-        coordenada_x: aeropuerto.coordenada_x,
-        coordenada_y: aeropuerto.coordenada_y,
-        siglas: aeropuerto.siglas
+        coordenada_x: Number(aeropuerto.coordenada_x),
+        coordenada_y: Number(aeropuerto.coordenada_y),
+        siglas: aeropuerto.siglas,
+        tipo: 'Internacional'
       }, {
         headers: new HttpHeaders({
           "Authorization": `Bearer ${this.token}`

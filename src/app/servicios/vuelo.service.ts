@@ -24,7 +24,11 @@ export class VueloService {
         hora_fin: vuelo.hora_fin,
         asientos_vendidos: vuelo.asientos_vendidos,
         nombre_piloto: vuelo.nombre_piloto,
-        ruta: vuelo.ruta
+        ruta: vuelo.ruta} , {
+
+        headers: new HttpHeaders({
+          "Authorization": `Bearer ${this.token}`
+        })
         
       });
     }
