@@ -1,6 +1,8 @@
+import { AeropuertoModel } from "./aeropuerto.model";
+
 export class RutaModel{
     id?: String;
-    origen?: String;
-    destino?: string;
-    tiempo_estimado?: string;
+    origen?: AeropuertoModel;
+    destino?: AeropuertoModel;
+    tiempo_estimado?: String;
   }

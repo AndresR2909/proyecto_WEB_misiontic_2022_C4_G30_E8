@@ -7,14 +7,14 @@
         <tr>
             <th>Origen</th>
             <th>Destino</th>
-            <th>Tiempo estimado</th>
+            <th>Tiempo estimado(minutos)</th>
         </tr>
       </thead>
    
       <tbody>
         <tr *ngFor="let p of listado">
-          <td>{{p.origen}}</td>
-          <td>{{p.destino}}</td>
+          <td>{{p.origen?.ciudad}}</td>
+          <td>{{p.destino?.ciudad}}</td>
           <td>{{p.tiempo_estimado}}</td>
           <td>
             <a routerLink="/rutas/edit/{{p.id}}" class="btn">Editar</a>

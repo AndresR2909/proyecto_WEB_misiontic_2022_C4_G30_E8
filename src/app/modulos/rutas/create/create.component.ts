@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AeropuertoModel } from 'src/app/modelos/aeropuerto.model';
 import { RutaModel } from 'src/app/modelos/ruta.model';
 import { RutaService } from 'src/app/servicios/ruta.service';
 import Swal from 'sweetalert2'
@@ -29,13 +30,13 @@ export class CreateComponent implements OnInit {
 
   store(){
     let ruta = new RutaModel();
-    ruta.origen = this.fgValidacion.controls["origen"].value as string;
-    ruta.destino = this.fgValidacion.controls["destino"].value as string;
+    ruta.origen = this.fgValidacion.controls["origen"].value as AeropuertoModel;
+    ruta.destino = this.fgValidacion.controls["destino"].value as AeropuertoModel;
     ruta.tiempo_estimado = this.fgValidacion.controls["tiempo_estimado"].value as string;
  
     this.rutaService.store(ruta).subscribe((data: RutaModel)=> {
       Swal.fire('Creado correctamente!', '', 'success')
-      this.router.navigate(['/aeropuertos/get']);
+      this.router.navigate(['/rutas/get']);
     },
     (error: any) => {
       console.log(error)
