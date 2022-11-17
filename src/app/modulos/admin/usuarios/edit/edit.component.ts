@@ -54,7 +54,11 @@ fgValidacion = this.fb.group({
   }
   
   ngOnInit(): void {
+    //obtiene el id de la URL
+    
     let id = this.route.snapshot.params["id"]
+
+    //consulta la informacion del usuario
     this.getWithId(id);
   }
 
