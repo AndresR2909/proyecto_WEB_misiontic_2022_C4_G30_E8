@@ -41,7 +41,8 @@ export class UsuarioService {
         nombre: usuario.nombre,
         apellidos: usuario.apellidos,
         telefono: usuario.telefono,
-        correo: usuario.correo
+        correo: usuario.correo,
+        password: "" //poner en el servicio back que password no sea obligatorio
       }, {
         headers: new HttpHeaders({
           "Authorization": `Bearer ${this.token}`

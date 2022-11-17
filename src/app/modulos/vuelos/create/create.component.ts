@@ -31,6 +31,7 @@ export class CreateComponent implements OnInit {
 
   store(){
     let vuelo = new VueloModel();
+  
     vuelo.fecha_inicio = new Date(this.fgValidacion.controls["fecha_inicio"].value as string) as Date;
     vuelo.hora_inicio = this.fgValidacion.controls["hora_inicio"].value as string;
     vuelo.fecha_fin = new Date(this.fgValidacion.controls["fecha_fin"].value as string) as Date;

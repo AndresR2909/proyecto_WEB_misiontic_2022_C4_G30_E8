@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AeropuertoModel } from 'src/app/modelos/aeropuerto.model';
 import { RutaModel } from 'src/app/modelos/ruta.model';
+import { AeropuertoService } from 'src/app/servicios/aeropuerto.service';
 import { RutaService } from 'src/app/servicios/ruta.service';
 import Swal from 'sweetalert2'
 
@@ -16,16 +17,27 @@ export class CreateComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
     private rutaService: RutaService,
+    private aeropuertoService: AeropuertoService,
     private router: Router) { }
+
+  listadoAeropuertos: AeropuertoModel[] = []
 
   fgValidacion = this.fb.group({
     origen: ['', [Validators.required]],
     destino: ['', [Validators.required]],
-    tiempo_estimado: ['', [Validators.required, Validators.minLength(1)]],
+    tiempo_estimado: ['', [Validators.required]],
     
   });
 
   ngOnInit(): void {
+    this.getAllAeropuertos()
+  }
+
+  getAllAeropuertos(){
+    this.aeropuertoService.getAll().subscribe((data: AeropuertoModel[]) => {
+      this.listadoAeropuertos = data
+      console.log(data)
+    })
   }
 
   store(){

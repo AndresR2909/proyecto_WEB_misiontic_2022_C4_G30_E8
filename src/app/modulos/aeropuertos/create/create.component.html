@@ -18,8 +18,15 @@
           <label for="ciudad">Ciudad</label>
         </div>
         <div class="input-field col s6">
-          <input formControlName="pais" type="text" class="validate">
-          <label for="pais">Pais</label>
+          <select formControlName="pais" type="text" class="validate" class="browser-default">
+            <option value="" disabled selected>Selecciones Pais</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Estados Unidos">Estados Unidos</option>
+            <option value="Peru">Peru</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Panama">Panama</option>
+            <option value="Panama">Venezuela</option>
+          </select>
         </div>
       </div>
       <div class="row">
