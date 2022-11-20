@@ -7,9 +7,9 @@
           <label for="origen">Origen</label>
         </div> -->
         <div class="input-field col s6">
-          <select class="browser-default" formControlName="origen" type="AeropuertoModel">
+          <select class="browser-default" formControlName="origen" type="text">
             <option value="" disabled selected>Seleccione el origen</option>
-            <option *ngFor="let aeropuerto of listadoAeropuertos" value={{aeropuerto}}>{{aeropuerto.nombre}} - {{aeropuerto.ciudad}}</option>
+            <option *ngFor="let aeropuerto of listadoAeropuertos" value="{{aeropuerto.nombre}}">{{aeropuerto.nombre}} - {{aeropuerto.ciudad}}</option>
           </select>
         </div>
 
@@ -19,9 +19,9 @@
         </div>-->
 
         <div class="input-field col s6">
-          <select class="browser-default" formControlName="destino" type="AeropuertoModel">
+          <select class="browser-default" formControlName="destino" type="text">
             <option value="" disabled selected>Seleccione el destino</option>
-            <option *ngFor="let aeropuerto of listadoAeropuertos" value={{aeropuerto}}>{{aeropuerto.nombre}} - {{aeropuerto.ciudad}}</option>
+            <option *ngFor="let aeropuerto of listadoAeropuertos" value="{{aeropuerto.nombre}}">{{aeropuerto.nombre}} - {{aeropuerto.ciudad}}</option>
           </select>
         </div>
 

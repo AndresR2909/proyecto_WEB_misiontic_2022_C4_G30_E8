@@ -42,9 +42,9 @@ export class CreateComponent implements OnInit {
 
   store(){
     let ruta = new RutaModel();
-    ruta.origen = this.fgValidacion.controls["origen"].value as AeropuertoModel;
-    ruta.destino = this.fgValidacion.controls["destino"].value as AeropuertoModel;
-    ruta.tiempo_estimado = this.fgValidacion.controls["tiempo_estimado"].value as string;
+    ruta.origen = this.fgValidacion.controls["origen"].value as String;
+    ruta.destino = this.fgValidacion.controls["destino"].value as String;
+    ruta.tiempo_estimado = (this.fgValidacion.controls["tiempo_estimado"].value as string).toString();
  
     this.rutaService.store(ruta).subscribe((data: RutaModel)=> {
       Swal.fire('Creado correctamente!', '', 'success')

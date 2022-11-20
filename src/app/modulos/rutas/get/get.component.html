@@ -13,8 +13,8 @@
    
       <tbody>
         <tr *ngFor="let p of listado">
-          <td>{{p.origen?.nombre}}</td>
-          <td>{{p.destino?.nombre}}</td>
+          <td>{{p.origen}}</td>
+          <td>{{p.destino}}</td>
           <td>{{p.tiempo_estimado}}</td>
           <td>
             <a routerLink="/rutas/edit/{{p.id}}" class="btn"><i class="material-icons">edit</i> </a>

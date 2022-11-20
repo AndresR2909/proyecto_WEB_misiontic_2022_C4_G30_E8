@@ -31,11 +31,18 @@
           <input formControlName="nombre_piloto" type="text" class="validate">
           <label for="nombre_piloto">nombre piloto</label>
         </div>
-        <div class="input-field col s6">
+        <!--<div class="input-field col s6">
             <input formControlName="ruta" type="text" class="validate">
             <label for="ruta">ruta</label>
+          </div>-->
+          <div class="input-field col s6">
+            <select class="browser-default" formControlName="ruta" type="text">
+              <option value="" disabled selected>Seleccione el origen</option>
+              <option *ngFor="let ruta of listadoRutas" value="{{ruta.origen}}-{{ruta.destino}}">{{ruta.origen}} - {{ruta.destino}}</option>
+            </select>
           </div>
       </div>
+
 
 
       

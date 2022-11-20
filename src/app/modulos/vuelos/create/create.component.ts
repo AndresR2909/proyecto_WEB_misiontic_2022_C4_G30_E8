@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { VueloModel } from 'src/app/modelos/vuelo.model';
 import { VueloService } from 'src/app/servicios/vuelo.service';
 import Swal from 'sweetalert2'
+import { RutaService } from 'src/app/servicios/ruta.service';
+import { RutaModel } from 'src/app/modelos/ruta.model';
 
 @Component({
   selector: 'app-create',
@@ -13,8 +15,11 @@ import Swal from 'sweetalert2'
 export class CreateComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
+    private rutaService: RutaService,
     private vueloService: VueloService,
     private router: Router) { }
+
+    listadoRutas: RutaModel[] = []
 
     fgValidacion = this.fb.group({
       fecha_inicio: ['', [Validators.required]],
@@ -27,6 +32,14 @@ export class CreateComponent implements OnInit {
     });
 
   ngOnInit(): void {
+    this.getAllRutas()
+  }
+
+  getAllRutas(){
+    this.rutaService.getAll().subscribe((data: RutaModel[]) => {
+      this.listadoRutas = data
+      console.log(data)
+    })
   }
 
   store(){

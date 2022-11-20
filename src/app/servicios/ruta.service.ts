@@ -18,8 +18,8 @@ export class RutaService {
 
     store(ruta: RutaModel): Observable<RutaModel> {
       return this.http.post<RutaModel>(`${this.url}/rutas`, {
-        origen: ruta.origen?.nombre,
-        destino: ruta.destino?.nombre,
+        origen: ruta.origen,
+        destino: ruta.destino,
         tiempo_estimado: ruta.tiempo_estimado}, {
 
           headers: new HttpHeaders({
